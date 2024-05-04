@@ -1,0 +1,24 @@
+type Event {
+    date: String!
+    day: String!
+    startTime: String!
+    endTime: String!
+    subject: String
+    classType: String
+    room: String
+}
+
+type Person {
+    id: ID!
+    login: String!
+    password: String!
+    email: String!
+    firstName: String!
+    lastName: String!
+    workSchedule: [Event!]!
+}
+
+type Query {
+    allPersons: [Person]
+    personById(id: ID!): Person
+}
